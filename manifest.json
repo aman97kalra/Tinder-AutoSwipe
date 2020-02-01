@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Tinder Auto Swipe",
+    "version": "1.1",
+    "description": "An extension to automate the swiping process on Tinder based on Bio.",
+    "web_accessible_resources": [
+        "images/*"
+    ],
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab"
+    ],
+    "page_action":{
+        "default_popup":"popup.html"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://tinder.com/*"],
+          "js": ["key_event.js"],
+          "run_at": "document_end"
+        }
+    ]
+}
