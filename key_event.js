@@ -25,8 +25,7 @@ function validProfile(bioText) {
         ];
         for (let i = 0; i < blacklist.length; i++){
             word = blacklist[i];
-            //bio.match( `/${word}/gi` )
-            if (bioText.toLowerCase().indexOf(word) !== -1){
+            if (bioText.match( `/${word}/gi`)){
                 console.log("Blacklisted word found  " + word);
                 return false;
             }
@@ -93,7 +92,7 @@ timer = setInterval(function () {
     // after the content has been loaded  then only your can click on basicUserDetails
     timerCount += 1;
     var container = document.querySelector('.react-swipeable-view-container');   
-    if( timerCount === 10 ){        // whyyyyyy
+    if( timerCount === 10 ){        
         clearInterval( timer );
     }
 
